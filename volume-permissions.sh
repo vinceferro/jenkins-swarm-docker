@@ -9,7 +9,7 @@ if [ "$(whoami)" == "root" ]; then
   fi
 
   # run main program as jenkins user
-  exec gosu jenkins /usr/local/bin/jenkins.sh "$@"
+  exec su-exec jenkins /usr/local/bin/jenkins.sh "$@"
 
 else
   # running as a unprivileged user already
